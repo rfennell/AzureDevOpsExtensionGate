@@ -25,7 +25,7 @@ namespace FunctionApp.Tests
 
             // act
             var request = TestFactory.CreateHttpRequest(p);
-            var response = (BadRequestObjectResult)await VSTSAgentGate.Run(request, logger);
+            var response = (BadRequestObjectResult)await ExtensionGate.Run(request, logger);
             
             // assert
             Assert.Equal("Please pass a Azure DevOps instance name, PAT and TaskGuid in the request body", response.Value);
@@ -45,7 +45,7 @@ namespace FunctionApp.Tests
 
             // act
             var request = TestFactory.CreateHttpRequest(p);
-            var response = (OkObjectResult)await VSTSAgentGate.Run(request, logger);
+            var response = (OkObjectResult)await ExtensionGate.Run(request, logger);
             
             // assert
             Assert.Equal("{ Deployed = True }", response.Value.ToString());

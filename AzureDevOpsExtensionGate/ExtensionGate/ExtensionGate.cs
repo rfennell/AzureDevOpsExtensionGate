@@ -13,9 +13,9 @@ using System.Net.Http.Headers;
 
 namespace FunctionApp
 {
-    public static class VSTSAgentGate
+    public static class ExtensionGate
     {
-        [FunctionName("VSTSAgentGate")]
+        [FunctionName("ExtensionGate")]
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
