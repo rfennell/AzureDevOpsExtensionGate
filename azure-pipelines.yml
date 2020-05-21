@@ -17,7 +17,7 @@ variables:
   vmImageName: 'vs2017-win2016'
 
   # Working Directory
-  workingDirectory: '$(System.DefaultWorkingDirectory)/AzureDevOpsExtensionGate/VSTSAgentGate'
+  workingDirectory: '$(System.DefaultWorkingDirectory)/AzureDevOpsExtensionGate/ExtensionGate'
 
 stages:
 - stage: Build
