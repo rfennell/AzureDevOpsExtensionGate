@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30104.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSTSAgentGate", "VSTSAgentGate\VSTSAgentGate.csproj", "{C28AFCF3-68D1-49D6-9354-C9F8423F0779}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSTSAgentGate.IntergrationTests", "VSTSAgentGate.IntergrationTests\VSTSAgentGate.IntergrationTests.csproj", "{AA14F13A-A6F7-4964-A7E2-2403AD7A268E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C28AFCF3-68D1-49D6-9354-C9F8423F0779}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C28AFCF3-68D1-49D6-9354-C9F8423F0779}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C28AFCF3-68D1-49D6-9354-C9F8423F0779}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C28AFCF3-68D1-49D6-9354-C9F8423F0779}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA14F13A-A6F7-4964-A7E2-2403AD7A268E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA14F13A-A6F7-4964-A7E2-2403AD7A268E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA14F13A-A6F7-4964-A7E2-2403AD7A268E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA14F13A-A6F7-4964-A7E2-2403AD7A268E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6ECBA079-755E-401C-A966-D74AFAA673A0}
+	EndGlobalSection
+EndGlobal
