@@ -11,7 +11,7 @@ variables:
   azureSubscription: '4b1f6709-4e2c-4325-ae76-3e4c3b91575a'
 
   # Function app name
-  functionAppName: 'VSTSAgentGate'
+  functionAppName: 'AzureDevOpsExtensionGate'
 
   # Agent VM image name
   vmImageName: 'vs2017-win2016'
