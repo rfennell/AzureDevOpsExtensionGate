@@ -12,17 +12,17 @@ using System.Text;
 
 namespace FunctionApp.Tests
 {
-    public class Payload
-    {
-        public string pat { get; set; }
-        public string instance { get; set; }
-        public string taskguid { get; set; }
-        public string version { get; set; }
-    }
-
+  
     public class TestFactory
     {
-        public static DefaultHttpRequest CreateHttpRequest(Payload payload)
+        public static string GetPAT()
+        {
+            var json = File.ReadAllText("appsettings.json");
+            var jObject = JObject.Parse(json);
+            return jObject.SelectToken("PAT").Value<string>();
+        }
+
+        public static DefaultHttpRequest CreateHttpRequest(Object payload)
         {
             var request = new DefaultHttpRequest(new DefaultHttpContext());
             // convert string to stream

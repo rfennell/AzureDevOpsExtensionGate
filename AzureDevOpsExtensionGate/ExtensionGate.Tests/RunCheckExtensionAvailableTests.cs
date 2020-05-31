@@ -3,30 +3,32 @@ using Microsoft.Extensions.Logging;
 using Xunit;
 using System.Collections.Generic;
 using Microsoft.Extensions.Primitives;
+using System.Configuration;
+using Microsoft.Extensions.Configuration;
 
 namespace FunctionApp.Tests
 {
-    public class FunctionsTests
+
+    public class RunCheckExtensionAvailableTests
     {
         private readonly ILogger logger = TestFactory.CreateLogger();
-        private string pat = "<ENTER A PAT>";
-
+       
         [Fact]
         public async void Cannot_run_function_with_no_params()
         {
             // arrange
-           var p = new Payload()
+            var p = new
             {
                 pat = "",
-                instance = "",
+                organization = "",
                 taskguid = "",
                 version = ""
             };
 
             // act
             var request = TestFactory.CreateHttpRequest(p);
-            var response = (BadRequestObjectResult)await ExtensionGate.Run(request, logger);
-            
+            var response = (BadRequestObjectResult)await ExtensionGate.RunCheckExtensionAvailable(request, logger);
+
             // assert
             Assert.Equal("Please pass a Azure DevOps instance name, PAT and TaskGuid in the request body", response.Value);
         }
@@ -35,21 +37,21 @@ namespace FunctionApp.Tests
         public async void Can_get_status_of_task()
         {
             // arrange
-            var p = new Payload()
+            var p = new
             {
-                pat = this.pat,
-                instance = "richardfennell",
+                pat = TestFactory.GetPAT(),
+                organization = "richardfennell",
                 taskguid = "6b42ca94-dc11-43dd-8b25-fcbf378b6b89",
                 version = "2.2.11"
             };
 
             // act
             var request = TestFactory.CreateHttpRequest(p);
-            var response = (OkObjectResult)await ExtensionGate.Run(request, logger);
-            
+            var response = (OkObjectResult)await ExtensionGate.RunCheckExtensionAvailable(request, logger);
+
             // assert
             Assert.Equal("{ Deployed = True }", response.Value.ToString());
         }
-     
+
     }
 }
