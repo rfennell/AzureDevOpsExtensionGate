@@ -50,7 +50,7 @@ namespace FunctionApp.Tests
             var response = (OkObjectResult)await ExtensionGate.RunCheckExtensionAvailable(request, logger);
 
             // assert
-            Assert.Equal("{ Deployed = True }", response.Value.ToString());
+            Assert.Equal("{ deployed = True }", response.Value.ToString());
         }
 
     }

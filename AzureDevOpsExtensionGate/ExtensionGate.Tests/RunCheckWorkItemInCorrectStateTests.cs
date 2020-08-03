@@ -30,7 +30,7 @@ namespace FunctionApp.Tests
             var response = (BadRequestObjectResult)await ExtensionGate.RunCheckWorkItemInCorrectState(request, logger);
             
             // assert
-            Assert.Equal("Please pass a Azure DevOps instance name, PAT and TaskGuid in the request body", response.Value);
+            Assert.Equal("Please pass a Azure DevOps instance name, PAT and other parameters in the request body", response.Value);
         }
 
         [Fact]
@@ -42,7 +42,7 @@ namespace FunctionApp.Tests
                 pat = TestFactory.GetPAT(),
                 organization = "richardfennell",
                 project = "GitHub",
-                buildid = "7899",
+                buildid = "8112",
                 states = "Done, Rejected, Closed"
             };
 
